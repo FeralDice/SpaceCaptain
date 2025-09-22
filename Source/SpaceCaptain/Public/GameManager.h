@@ -6,6 +6,10 @@
 #include "ShipData.h"
 #include "GameSettings.h"
 
+
+#include "Subsystems/SubsystemCollection.h"
+
+
 #include "GameManager.generated.h"
 
 
@@ -18,12 +22,14 @@ class SPACECAPTAIN_API UGameManager : public UGameInstanceSubsystem
 
 	public:
 
+		UPROPERTY()
 		const UGameSettings* Settings;
 
 		void Initialize(FSubsystemCollectionBase& Collection) override;
 
 		
-		
+		void InitializeInputSystem();
+	
 		void SpawnShip(SHIP_MODEL ShipName, FVector Pos, FRotator mRot);
 
 

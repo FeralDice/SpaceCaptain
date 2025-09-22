@@ -16,15 +16,14 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = "SHIP DATA")
 	int HIT_POINTS;	
+
 	UPROPERTY(EditAnywhere, Category = "SHIP DATA")
 	int ARMOR;
+
 	UPROPERTY(EditAnywhere, Category = "SHIP DATA")
 	int SPEED;
 
-	UPROPERTY(EditAnywhere, Category = "SHIP DATA")
-	TMap<int, FWeaponData> mWeapons;
-
-
+	
 
 };
 

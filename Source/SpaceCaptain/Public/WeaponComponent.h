@@ -3,34 +3,31 @@
 #pragma once
 
 #include "CoreMinimal.h"
-
-#include "ShipData.h"
+#include "GameEnums.h"
 #include "WeaponData.h"
 
-#include "WeaponComponent.h"
-#include "ShipComponent.generated.h"
+
+#include "WeaponComponent.generated.h"
 
 
 
 
 UCLASS(Blueprintable, ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
-class SPACECAPTAIN_API UShipComponent: public UActorComponent
+class SPACECAPTAIN_API UWeaponComponent: public USceneComponent
 {
 	GENERATED_BODY()
 
 public:
 
 	UPROPERTY(EditAnywhere, Category = "SHIP")
-	FShipData mShipData;
+	WEAPON_MODEL mWeaponModel;
 
-	UPROPERTY()
-	TArray<UWeaponComponent*> mWeaponSlots;
 
-	UPROPERTY()
-	USceneComponent* mRoot;
+	UPROPERTY(EditAnywhere, Category = "SHIP")
+	FWeaponData mWeaponData;
 
 	UFUNCTION()
-	void InitializeShip(const FShipData& mData);
+	void InitializeWeapon(const FWeaponData& mData);
 
 
 
