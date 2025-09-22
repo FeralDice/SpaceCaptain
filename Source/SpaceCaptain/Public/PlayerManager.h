@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-
+#include "InputAction.h"
 #include "PlayerManager.generated.h"
 
 
@@ -18,5 +18,6 @@ class SPACECAPTAIN_API APlayerManager : public APawn
 
 	virtual void BeginPlay() override;
 
-
+	void BindInputs();
+	void UpdateShipRudder(const FInputActionInstance& mAction);
 };
