@@ -4,7 +4,17 @@
 
 #include "CoreMinimal.h"
 
-
+UENUM(BlueprintType)
+enum class EQUIPMENT_TYPE : uint8
+{
+    GENERATOR = 0 ,
+    ENGINE = 1  ,
+    WEAPON = 2  ,
+    LIFESYSTEM = 3  ,
+    RADAR = 4  ,
+    JAMMER = 5  ,
+    
+};
 UENUM(BlueprintType)
 enum class SHIP_MODEL : uint8
 {

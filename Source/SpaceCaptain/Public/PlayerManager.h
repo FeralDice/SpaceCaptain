@@ -16,6 +16,7 @@ class SPACECAPTAIN_API APlayerManager : public APawn
 
 	public:
 
+	
 	virtual void BeginPlay() override;
 
 	void BindInputs();

@@ -4,8 +4,7 @@
 
 #include "CoreMinimal.h"
 
-#include "ShipData.h"
-#include "WeaponData.h"
+#include "GameStructs.h"
 
 #include "WeaponComponent.h"
 #include "ShipComponent.generated.h"

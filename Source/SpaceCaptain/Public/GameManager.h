@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "ShipData.h"
+#include "GameStructs.h"
 #include "GameSettings.h"
 
 

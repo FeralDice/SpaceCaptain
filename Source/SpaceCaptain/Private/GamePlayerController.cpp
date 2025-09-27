@@ -37,7 +37,7 @@ void AGamePlayerController::InitializeInputMappings()
 
 void AGamePlayerController::OnActionRequest(const FInputActionInstance& mAction)
 {
-	
+	//TODO : one action per action ;)
 	UE_LOG(LogTemp, Display, TEXT("OnActionRequest"));
 
 	mOnActionForward_DELEGATE.Broadcast(mAction);

@@ -5,8 +5,7 @@
 #include "CoreMinimal.h"
 
 #include "Engine/DeveloperSettings.h"
-#include "ShipData.h"
-#include "WeaponData.h"
+#include "GameStructs.h"
 #include "GameEnums.h"
 
 #include "EnhancedInput/Public/EnhancedInputSubsystems.h"

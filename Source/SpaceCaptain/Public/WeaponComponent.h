@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameEnums.h"
-#include "WeaponData.h"
+#include "GameStructs.h"
 
 
 #include "WeaponComponent.generated.h"
@@ -19,6 +19,9 @@ class SPACECAPTAIN_API UWeaponComponent: public USceneComponent
 
 public:
 
+	UPROPERTY(EditAnywhere,Category = "SHIP")
+	int SlotNumber;
+	
 	UPROPERTY(EditAnywhere, Category = "SHIP")
 	WEAPON_MODEL mWeaponModel;
 
