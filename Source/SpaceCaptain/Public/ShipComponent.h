@@ -6,7 +6,7 @@
 
 #include "GameStructs.h"
 
-#include "WeaponComponent.h"
+
 #include "ShipComponent.generated.h"
 
 
@@ -23,7 +23,10 @@ public:
 	FShipData mShipData;
 
 	UPROPERTY()
-	TArray<UWeaponComponent*> mWeaponSlots;
+	TArray<TSoftObjectPtr< UGeneratorSlot>> GeneratorSlots;
+
+	UPROPERTY()
+	TArray<TSoftObjectPtr< UWeaponSlot>> WeaponSlots;
 
 	UPROPERTY()
 	USceneComponent* mRoot;

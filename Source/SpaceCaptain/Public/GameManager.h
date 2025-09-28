@@ -25,10 +25,7 @@ class SPACECAPTAIN_API UGameManager : public UGameInstanceSubsystem
 		UPROPERTY()
 		const UGameSettings* Settings;
 
-		void Initialize(FSubsystemCollectionBase& Collection) override;
-
-		
-		void InitializeInputSystem();
+		virtual void Initialize(FSubsystemCollectionBase& Collection) override;
 	
 		void SpawnShip(SHIP_MODEL ShipName, FVector Pos, FRotator mRot);
 

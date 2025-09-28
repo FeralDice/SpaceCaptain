@@ -24,7 +24,7 @@ public:
 	UGameSettings(const FObjectInitializer& ObjectInitializer);
 
 
-
+//SHIPS
 	UPROPERTY(Config, EditAnywhere)
 	TMap < SHIP_MODEL , TSubclassOf<AActor> > ShipBlueprints;
 	
@@ -32,9 +32,18 @@ public:
 	UPROPERTY(Config, EditAnywhere)
 	TMap < SHIP_MODEL, FShipData > ShipData;
 
+// MODULES
+
 	UPROPERTY(Config, EditAnywhere)
 	TMap < WEAPON_MODEL, FWeaponData > WeaponData;
 
+	UPROPERTY(Config, EditAnywhere)
+	TMap < GENERATOR_MODEL, FGeneratorData > GeneratorData;
+
+	
+
+
+//INPUT
 	UPROPERTY(Config, EditAnywhere)
 	TSoftObjectPtr< UInputMappingContext> mMappingContext;
 

@@ -30,5 +30,12 @@ enum class WEAPON_MODEL : uint8
     BLASTER_MKII = 2  ,
 };
 
-
+UENUM(BlueprintType)
+enum class GENERATOR_MODEL : uint8
+{
+    PULSAR = 0,
+    GAMATE = 100 ,
+    OREUS = 200  ,
+    
+};
 
