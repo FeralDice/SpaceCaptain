@@ -3,9 +3,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "GameManager.h"
 
 #include "GameStructs.h"
 
+#include "GeneratorSlot.h"
+#include "WeaponSlot.h"
 
 #include "ShipComponent.generated.h"
 
@@ -18,21 +21,28 @@ class SPACECAPTAIN_API UShipComponent: public UActorComponent
 	GENERATED_BODY()
 
 public:
-
+	UPROPERTY(VisibleAnywhere)
+	UGameManager* GameManager;
+	
 	UPROPERTY(EditAnywhere, Category = "SHIP")
-	FShipData mShipData;
+	FShipLoadout ShipLoadOut;
 
-	UPROPERTY()
-	TArray<TSoftObjectPtr< UGeneratorSlot>> GeneratorSlots;
+	UPROPERTY(EditAnywhere)
+	TArray<UGeneratorSlot*> GeneratorSlots;
 
-	UPROPERTY()
-	TArray<TSoftObjectPtr< UWeaponSlot>> WeaponSlots;
+	UPROPERTY(EditAnywhere)
+	TArray< UWeaponSlot*> WeaponSlots;
 
-	UPROPERTY()
+	UPROPERTY(EditAnywhere)
 	USceneComponent* mRoot;
 
+	UPROPERTY(EditAnywhere)
+	int CurrentStructure;
+
 	UFUNCTION()
-	void InitializeShip(const FShipData& mData);
+	void InitializeShip(const FShipLoadout& mData);
+
+	
 
 
 

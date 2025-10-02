@@ -22,12 +22,18 @@ class SPACECAPTAIN_API UGameManager : public UGameInstanceSubsystem
 
 	public:
 
-		UPROPERTY()
-		const UGameSettings* Settings;
+	UPROPERTY()
+	const UGameSettings* Settings;
 
-		virtual void Initialize(FSubsystemCollectionBase& Collection) override;
 	
-		void SpawnShip(SHIP_MODEL ShipName, FVector Pos, FRotator mRot);
+
+	virtual void Initialize(FSubsystemCollectionBase& Collection) override;
+
+
+	const FShipData* GetShipData(ESHIP_MODEL Model);
+	const FShipLoadout* GetShipLoadout(FName LoadoutName);
+	const FWeaponData* GetWeaponData(EWEAPON_MODEL Model);
+	void SpawnShip(FShipLoadout ShipLoadout, FVector Pos, FRotator mRot);
 
 
 

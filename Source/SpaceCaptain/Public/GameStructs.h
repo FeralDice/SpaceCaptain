@@ -14,18 +14,17 @@ struct SPACECAPTAIN_API FEquipmentData : public FTableRowBase
 
 public:
 
-	UPROPERTY(EditAnywhere, Category = "EQUIPMENT DATA")
-	FString Name;
+	
 	UPROPERTY(EditAnywhere, Category = "EQUIPMENT DATA")
 	int Size;
+	
 	UPROPERTY(EditAnywhere, Category = "EQUIPMENT DATA")
 	EQUIPMENT_TYPE EquipmentType;
+	
 	UPROPERTY(EditAnywhere, Category = "EQUIPMENT DATA")
 	int STRUCTURE;
 
-	TSoftObjectPtr<AActor> Blueprint;
-
-
+	
 };
 
 USTRUCT(BlueprintType)
@@ -35,7 +34,7 @@ struct SPACECAPTAIN_API FWeaponData : public FEquipmentData
 
 public:
 	UPROPERTY(EditAnywhere, Category = "WEAPON DATA")
-	WEAPON_MODEL Model;
+	EWEAPON_MODEL Model;
 	
 	UPROPERTY(EditAnywhere, Category = "WEAPON DATA")
 	int DAMAGE;
@@ -44,6 +43,7 @@ public:
 	UPROPERTY(EditAnywhere, Category = "WEAPON DATA")
 	int AOD;
 
+	TSoftObjectPtr<TSubclassOf<AActor>> TurretBlueprint;
 	
 
 
@@ -56,7 +56,7 @@ struct SPACECAPTAIN_API FGeneratorData : public FEquipmentData
 public:
 
 	UPROPERTY(EditAnywhere, Category = "GENERATOR DATA")
-	GENERATOR_MODEL Model;
+	EGENERATOR_MODEL Model;
 	
 	UPROPERTY(EditAnywhere, Category = "GENERATOR DATA")
 	int OUTPUT;
@@ -74,7 +74,7 @@ struct SPACECAPTAIN_API FShipData : public FTableRowBase
 public:
 
 	UPROPERTY(EditAnywhere, Category = "SHIP DATA")
-	int HIT_POINTS;	
+	int STRUCTURE;	
 
 	UPROPERTY(EditAnywhere, Category = "SHIP DATA")
 	int ARMOR;
@@ -82,8 +82,25 @@ public:
 	UPROPERTY(EditAnywhere, Category = "SHIP DATA")
 	int SPEED;
 
-	UPROPERTY(EditAnywhere, Category = "SHIP DATA")
-	TMap<int,FEquipmentData> ShipLoadout;
-
+	
 };
 
+
+
+USTRUCT(BlueprintType)
+struct SPACECAPTAIN_API FShipLoadout : public FTableRowBase
+{
+	GENERATED_BODY()
+
+public:
+
+	UPROPERTY(EditAnywhere, Category = "SHIP Loadout")
+	ESHIP_MODEL ShipModel;	
+	
+
+	UPROPERTY(EditAnywhere, Category = "SHIP Loadout")
+	TMap<int,EGENERATOR_MODEL> Generators;
+
+	UPROPERTY(EditAnywhere, Category = "SHIP Loadout")
+	TMap<int,EWEAPON_MODEL> Weapons;
+};

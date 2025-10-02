@@ -2,35 +2,40 @@
 
 #include "ShipComponent.h"
 
-#include "EquipmentSlotComponent.h"
-#include "GameSettings.h"
+#include "GameTools.h"
 
-void UShipComponent::InitializeShip(const FShipData& mData)
+void UShipComponent::InitializeShip(const FShipLoadout& mData)
 {
-	mShipData = mData;
+	ShipLoadOut = mData;
 
-	const UGameSettings* mSettings = GetDefault<UGameSettings>();
+	GameManager = GetWorld()->GetGameInstance()->GetSubsystem<UGameManager>();
+	const FShipData * ShipData = GameManager->GetShipData(ShipLoadOut.ShipModel);
+	CurrentStructure = ShipData->STRUCTURE;
 	
-	GetOwner()->GetComponents(EquipmentSlots, true);
-	for (int i = 0; i < EquipmentSlots.Num(); i++)
+	
+	GetOwner()->GetComponents(GeneratorSlots, true);
+/*
+	for ( UGeneratorSlot* slot : GeneratorSlots)
 	{
-		
-		FEquipmentData mdata;
-		//EquipmentSlots[i]->InitializeComponent(mdata);
-	
-	}
-	/*
-	GetOwner()->GetComponents(mWeaponSlots, true);
-	
-	for (int i = 0; i < mWeaponSlots.Num(); i++)
-	{
-		const FWeaponData* mweapondata = mSettings->WeaponData.Find(mWeaponSlots[i]->mWeaponModel);
-		if (mweapondata!=nullptr)
+		int index = slot->SlotNumber;
+		const FGeneratorData* mdata = mSettings->GeneratorData.Find(mData.Generators[index]);
+		if (mdata != nullptr)
 		{
-			mWeaponSlots[i]->InitializeWeapon(*mweapondata);
+			slot->InitializeSlot(*mdata);
 		}
-	
 	}
-	*/
+*/
+	
+
+	GetOwner()->GetComponents(WeaponSlots, true);
+	for ( UWeaponSlot* slot : WeaponSlots)
+	{
+		EWEAPON_MODEL WeaponModel = ShipLoadOut.Weapons[slot->SlotNumber] ;
+		const FWeaponData* WeaponData =GameManager->GetWeaponData(WeaponModel);
+		if (WeaponData!=nullptr)
+		{
+			slot->InitializeSlot(*WeaponData);
+		}
+	}
 	
 }

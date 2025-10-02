@@ -16,26 +16,30 @@ enum class EQUIPMENT_TYPE : uint8
     
 };
 UENUM(BlueprintType)
-enum class SHIP_MODEL : uint8
+enum class ESHIP_MODEL : uint8
 {
-    MINOTAUR = 0 ,
-    AEGIR = 1  ,
+    UNKOWN = 0 ,
+    MINOTAUR = 10 ,
+    AEGIR = 20  ,
 };
 
 UENUM(BlueprintType)
-enum class WEAPON_MODEL : uint8
+enum class EWEAPON_MODEL : uint8
+{
+    EMPTY = 0 ,
+    BLASTER_MKI = 10 ,
+    BLASTER_MKII = 11 ,
+};
+
+
+
+
+UENUM(BlueprintType)
+enum class EGENERATOR_MODEL : uint8
 {
     EMPTY = 0,
-    BLASTER_MKI = 1 ,
-    BLASTER_MKII = 2  ,
-};
-
-UENUM(BlueprintType)
-enum class GENERATOR_MODEL : uint8
-{
-    PULSAR = 0,
-    GAMATE = 100 ,
-    OREUS = 200  ,
+    PULSAR_MKI = 10,
+    PULSAR_MKII = 11,
     
 };
 

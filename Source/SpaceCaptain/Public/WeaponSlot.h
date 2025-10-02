@@ -29,7 +29,8 @@ public:
 	UPROPERTY(EditAnywhere,Category = "SLOT")
 	int STRUCTURE;
 
-	TSoftObjectPtr<FWeaponData> SlotData;
+	UPROPERTY(EditAnywhere,Category = "SLOT")
+	FWeaponData SlotData;
 
 	
 	UFUNCTION()

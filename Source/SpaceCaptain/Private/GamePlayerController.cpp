@@ -24,6 +24,9 @@ void AGamePlayerController::InitializeInputMappings()
 
 
 	const UGameSettings * mSettings =   GetDefault<UGameSettings>();
+	mSettings->mMappingContext.LoadSynchronous();
+	mSettings->IA_FORWARD.LoadSynchronous();
+
 	if (UEnhancedInputLocalPlayerSubsystem* InputSystem = GetLocalPlayer()->GetSubsystem<UEnhancedInputLocalPlayerSubsystem>())
 	{
 		InputSystem->AddMappingContext(mSettings->mMappingContext.Get(),0);

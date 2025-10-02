@@ -29,7 +29,8 @@ public:
 	UPROPERTY(EditAnywhere,Category = "SLOT")
 	int STRUCTURE;
 
-	TSoftObjectPtr<FGeneratorData> SlotData;
+	UPROPERTY(EditAnywhere,Category = "SLOT")
+	FGeneratorData SlotData;
 	
 	UFUNCTION()
 	void InitializeSlot(const FGeneratorData& mData);

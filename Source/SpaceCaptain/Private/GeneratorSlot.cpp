@@ -6,5 +6,7 @@
 void UGeneratorSlot::InitializeSlot(const FGeneratorData& mData)
 {
 	
+	SlotData = mData;
+	STRUCTURE = mData.STRUCTURE;
 	
 }

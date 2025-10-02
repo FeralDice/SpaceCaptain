@@ -26,21 +26,22 @@ public:
 
 //SHIPS
 	UPROPERTY(Config, EditAnywhere)
-	TMap < SHIP_MODEL , TSubclassOf<AActor> > ShipBlueprints;
+	TMap < ESHIP_MODEL , TSubclassOf<AActor> > ShipBlueprints;
 	
 
-	UPROPERTY(Config, EditAnywhere)
-	TMap < SHIP_MODEL, FShipData > ShipData;
-
-// MODULES
 
 	UPROPERTY(Config, EditAnywhere)
-	TMap < WEAPON_MODEL, FWeaponData > WeaponData;
+	TSoftObjectPtr <UDataTable>  ShipDataTable;
 
 	UPROPERTY(Config, EditAnywhere)
-	TMap < GENERATOR_MODEL, FGeneratorData > GeneratorData;
+	TSoftObjectPtr <UDataTable>  ShipLoadoutDataTable;
 
-	
+	UPROPERTY(Config, EditAnywhere)
+	TSoftObjectPtr <UDataTable>  WeaponDataTable;
+
+	UPROPERTY(Config, EditAnywhere)
+	TSoftObjectPtr <UDataTable>  GeneratorDataTable;
+
 
 
 //INPUT
@@ -50,6 +51,8 @@ public:
 	
 	UPROPERTY(Config, EditAnywhere)
 	const TSoftObjectPtr< UInputAction> IA_FORWARD;
+
+
 
 
 
