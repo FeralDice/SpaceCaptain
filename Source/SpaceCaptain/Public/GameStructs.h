@@ -17,10 +17,7 @@ public:
 	
 	UPROPERTY(EditAnywhere, Category = "EQUIPMENT DATA")
 	int Size;
-	
-	UPROPERTY(EditAnywhere, Category = "EQUIPMENT DATA")
-	EQUIPMENT_TYPE EquipmentType;
-	
+
 	UPROPERTY(EditAnywhere, Category = "EQUIPMENT DATA")
 	int STRUCTURE;
 

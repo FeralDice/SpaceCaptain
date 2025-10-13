@@ -33,7 +33,8 @@ class SPACECAPTAIN_API UGameManager : public UGameInstanceSubsystem
 	const FShipData* GetShipData(ESHIP_MODEL Model);
 	const FShipLoadout* GetShipLoadout(FName LoadoutName);
 	const FWeaponData* GetWeaponData(EWEAPON_MODEL Model);
-	void SpawnShip(FShipLoadout ShipLoadout, FVector Pos, FRotator mRot);
+	
+	AActor* SpawnShip(FShipLoadout ShipLoadout, FVector Pos, FRotator mRot);
 
 
 

@@ -13,7 +13,7 @@ void UShipComponent::InitializeShip(const FShipLoadout& mData)
 	CurrentStructure = ShipData->STRUCTURE;
 	
 	
-	GetOwner()->GetComponents(GeneratorSlots, true);
+	GetOwner()->GetComponents<UGeneratorSlot>(GeneratorSlots, true);
 /*
 	for ( UGeneratorSlot* slot : GeneratorSlots)
 	{
@@ -27,7 +27,7 @@ void UShipComponent::InitializeShip(const FShipLoadout& mData)
 */
 	
 
-	GetOwner()->GetComponents(WeaponSlots, true);
+	GetOwner()->GetComponents<UWeaponSlot>(WeaponSlots, true);
 	for ( UWeaponSlot* slot : WeaponSlots)
 	{
 		EWEAPON_MODEL WeaponModel = ShipLoadOut.Weapons[slot->SlotNumber] ;

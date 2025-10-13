@@ -46,15 +46,21 @@ public:
 
 //INPUT
 	UPROPERTY(Config, EditAnywhere)
-	TSoftObjectPtr< UInputMappingContext> mMappingContext;
+	TSoftObjectPtr< UInputMappingContext> MappingContext;
 
-	
+	UPROPERTY(Config, EditAnywhere)
+	TSoftObjectPtr< UCurveFloat> CameraDampingCurve;
+
 	UPROPERTY(Config, EditAnywhere)
 	const TSoftObjectPtr< UInputAction> IA_FORWARD;
 
+	UPROPERTY(Config, EditAnywhere)
+	const TSoftObjectPtr< UInputAction> IA_BACKWARDS;
 
+	UPROPERTY(Config, EditAnywhere)
+	const TSoftObjectPtr< UInputAction> IA_LEFT;
 
-
-
+	UPROPERTY(Config, EditAnywhere)
+	const TSoftObjectPtr< UInputAction> IA_RIGHT;
 
 };

@@ -15,8 +15,13 @@ class SPACECAPTAIN_API AGameModeSinglePlayer : public AGameMode
 {
 	GENERATED_BODY()
 
+
+public :
+
+
 	UPROPERTY()
 	UGameManager * mManager;
 	
 	virtual void StartPlay() override;
+
 };

@@ -39,7 +39,7 @@ const FWeaponData* UGameManager::GetWeaponData(EWEAPON_MODEL Model)
 }
 
 
-void UGameManager::SpawnShip(FShipLoadout loadout,FVector Pos,FRotator mRot)
+AActor* UGameManager::SpawnShip(FShipLoadout loadout,FVector Pos,FRotator mRot)
 {
 	UClass * mActorClass = Settings->ShipBlueprints.Find(loadout.ShipModel)->Get();
 
@@ -52,10 +52,12 @@ void UGameManager::SpawnShip(FShipLoadout loadout,FVector Pos,FRotator mRot)
 		
 			UShipComponent* mShipComponent = mShip->GetComponentByClass<UShipComponent>();
 			mShipComponent->InitializeShip(loadout);
+
+			return mShip;
 		
 		}
 	}
-
+	return nullptr;
 	
 }
 

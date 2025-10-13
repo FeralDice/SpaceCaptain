@@ -21,7 +21,6 @@ public:
 
 	UPROPERTY(EditAnywhere,Category = "SLOT")
 	int SlotNumber;
-	
 
 	UPROPERTY(EditAnywhere,Category = "SLOT")
 	int Size;
